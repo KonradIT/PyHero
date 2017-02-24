@@ -137,7 +137,7 @@ def launch(command, passwd, camera):
                 cc.start()
         else :
             try :  #AND THIS FOR ALL THE OTHERS
-                global close
+                
                 close = False
                 tm = threading.Thread(target=timer)
                 tm.start()   ## START THE TIMER
@@ -325,6 +325,7 @@ def cameraNotFound():
     commands.bye()
 
 if __name__=="__main__":  #LAUNCH THE PROGRAM
+    global close
     try:
         main()
     except KeyboardInterrupt :  #KEYBOARD INTERRUPTION PREVENTION
